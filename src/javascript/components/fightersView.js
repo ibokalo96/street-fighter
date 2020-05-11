@@ -2,6 +2,7 @@ import { createElement } from '../helpers/domHelper';
 import { createFightersSelector } from './fighterSelector';
 
 export function createFighters(fighters) {
+  
   const selectFighter = createFightersSelector();
   const container = createElement({ tagName: 'div', className: 'fighters___root' });
   const preview = createElement({ tagName: 'div', className: 'preview-container___root' });
@@ -17,7 +18,11 @@ export function createFighters(fighters) {
 function createFighter(fighter, selectFighter) {
   const fighterElement = createElement({ tagName: 'div', className: 'fighters___fighter' });
   const imageElement = createImage(fighter);
-  const onClick = (event) => selectFighter(event, fighter._id);
+  const onClick = (event) => {
+  
+  
+    return selectFighter(event, fighter._id);
+  }
 
   fighterElement.append(imageElement);
   fighterElement.addEventListener('click', onClick, false);
