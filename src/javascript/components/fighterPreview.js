@@ -7,13 +7,14 @@ export function createFighterPreview(fighter, position) {
     className: `fighter-preview___root ${positionClassName}`,
   });
   const para = document.createElement('P');
+  para.setAttribute('color', 'white');
   const img = document.createElement('IMG');
 
-  const name = fighter?.[0].name;
-  const health = fighter?.[0].health;
-  const attack = fighter?.[0].attack;
-  const defense = fighter?.[0].defense;
-  const source = fighter?.[0].source;
+  const name = fighter?.name;
+  const health = fighter?.health;
+  const attack = fighter?.attack;
+  const defense = fighter?.defense;
+  const source = fighter?.source;
   img.src = source;
 
   para.innerText = `

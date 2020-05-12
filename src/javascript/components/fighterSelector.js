@@ -22,9 +22,7 @@ const fighterDetailsMap = new Map();
 
 export async function getFighterInfo(fighterId) {
   const fighterDetails = await fighterService.getFighterDetails(fighterId);
-  console.log('_fighterDetails', fighterDetails);
   createFighterPreview(fighterDetails);
-
   return fighterDetails;
 }
 
